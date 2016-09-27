@@ -1,0 +1,7 @@
+* {
+  border: 2px dotted orange;
+}
+
+body {
+  background: linear-gradient(to right, #fcfbe3, #ffa07a, #fcfbe3);
+}
