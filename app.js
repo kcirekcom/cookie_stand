@@ -101,3 +101,20 @@ var seattleCenter = {
       console.log(this.totalCookiesPerHour);
     }
   },
+  render: function() {
+    seattleCenter.calcRandCustomersPerHour();
+    seattleCenter.calcTotalCookiesPerHour();
+    var seattlecenterEl = document.getElementById('seattlecenter');
+    for (var i = 0; i < this.totalCookiesPerHour.length; i++) {
+      var liEl = document.createElement('li');
+      liEl.textContent = hours[i] + ': ' + this.totalCookiesPerHour[i];
+      console.log(liEl);
+      seattlecenterEl.appendChild(liEl);
+    }
+    liEl = document.createElement('li');
+    liEl.textContent = 'Total: ' + this.totalDailySales;
+    seattlecenterEl.appendChild(liEl);
+  }
+};
+
+seattleCenter.render();
