@@ -79,3 +79,42 @@ var seatacAirportStore = {
 };
 
 seatacAirportStore.render();
+
+var seattleCenter = {
+  locationName: 'First and Pike',
+  minCustPerHour: 11,
+  maxCustPerHour: 38,
+  randCustPerHour: [],
+  avgCookiesPerCust: 3.7,
+  totalCookiesPerHour: [],
+  totalDailySales: 0,
+  calcRandCustomersPerHour: function() {
+    for (var i = 0; i < hours.length; i++) {
+      this.randCustPerHour.push(Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour);
+      console.log(this.randCustPerHour);
+    }
+  },
+  calcTotalCookiesPerHour: function() {
+    for (var i = 0; i < hours.length; i++) {
+      this.totalCookiesPerHour.push(Math.floor(this.randCustPerHour[i] * this.avgCookiesPerCust));
+      this.totalDailySales += (Math.floor(this.randCustPerHour[i] * this.avgCookiesPerCust));
+      console.log(this.totalCookiesPerHour);
+    }
+  },
+  render: function() {
+    seattleCenter.calcRandCustomersPerHour();
+    seattleCenter.calcTotalCookiesPerHour();
+    var seattlecenterEl = document.getElementById('seattlecenter');
+    for (var i = 0; i < this.totalCookiesPerHour.length; i++) {
+      var liEl = document.createElement('li');
+      liEl.textContent = hours[i] + ': ' + this.totalCookiesPerHour[i];
+      console.log(liEl);
+      seattlecenterEl.appendChild(liEl);
+    }
+    liEl = document.createElement('li');
+    liEl.textContent = 'Total: ' + this.totalDailySales;
+    seattlecenterEl.appendChild(liEl);
+  }
+};
+
+seattleCenter.render();
