@@ -62,3 +62,20 @@ var seatacAirportStore = {
       console.log(this.totalCookiesPerHour);
     }
   },
+  render: function() {
+    seatacAirportStore.calcRandCustomersPerHour();
+    seatacAirportStore.calcTotalCookiesPerHour();
+    var seatacairportEl = document.getElementById('seatacairport');
+    for (var i = 0; i < this.totalCookiesPerHour.length; i++) {
+      var liEl = document.createElement('li');
+      liEl.textContent = hours[i] + ': ' + this.totalCookiesPerHour[i];
+      console.log(liEl);
+      seatacairportEl.appendChild(liEl);
+    }
+    liEl = document.createElement('li');
+    liEl.textContent = 'Total: ' + this.totalDailySales;
+    seatacairportEl.appendChild(liEl);
+  }
+};
+
+seatacAirportStore.render();
