@@ -24,28 +24,37 @@ function Store (locationName, minCustPerHour, maxCustPerHour, avgCookiesPerCust)
       this.totalDailySales += this.totalCookiesPerHour[i];
     }
   };
-  // storeLocations.push(this);
   this.render = function() {
     this.calcTotalCookiesPerHour();
     for (var i = 0; i < hours.length; i++){
-      storeLocations.push(this);
+      var trEl = document.createElement('tr');
+
+      var tdEl = document.createElement('td');
+      console.log('storeLocations[i]', storeLocations[i]);
+      tdEl.textContent = storeLocations[i];
+      trEl.appendChild(tdEl);
     }
-    // function cookieTableJS () {
-    //   var cookieTable = document.getElementById('salmoncookietable');
-    //   cookieTable.appendChild(trEl);
-    // }
-    // cookieTableJS();
   };
+  storeLocations.push(this);
 };
 
 for (var i = 0; i < storeLocations.length; i++) {
-  var trEl = document.createElement('tr');
-
-  var tdEl = document.createElement('td');
-  console.log('storeLocations[i]', storeLocations[i]);
-  tdEl.textContent = storeLocations[i];
-  trEl.appendChild(tdEl);
+  storeLocations[0].render();
 }
+// function cookieTableJS () {
+//   var cookieTable = document.getElementById('salmoncookietable');
+//   cookieTable.appendChild(trEl);
+// }
+// cookieTableJS();
+//
+// for (var i = 0; i < storeLocations.length; i++) {
+//   var trEl = document.createElement('tr');
+//
+//   var tdEl = document.createElement('td');
+//   console.log('storeLocations[i]', storeLocations[i]);
+//   tdEl.textContent = storeLocations[i];
+//   trEl.appendChild(tdEl);
+// }
 
 function makeHeaderRow(){
   var cookieTable = document.getElementById('salmoncookietable');
@@ -60,6 +69,11 @@ function makeHeaderRow(){
     thEl.textContent = hours[i];
     trEl.appendChild(thEl);
   }
+
+  thEl = document.createElement('th');
+  thEl.textContent = 'Daily Location Total';
+  trEl.appendChild(thEl);
+
   cookieTable.appendChild(trEl);
 }
 makeHeaderRow();
