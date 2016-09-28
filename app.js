@@ -77,3 +77,16 @@ function makeHeaderRow(){
   }
 }
 makeHeaderRow();
+
+// function makeTotalBottomRow(){
+//   var cookieTable = document.getElementById('salmoncookietable');
+//   var trEl = document.createElement('tr');
+//
+//   var thEl = document.createElement('th');
+//   thEl.textContent = '';
+//   trEl.appendChild(thEl);
+//
+//   cookieTable.appendChild(trEl);
+// }
+//
+// makeTotalBottomRow();
