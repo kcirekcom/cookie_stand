@@ -25,27 +25,25 @@ function Store (locationName, minCustPerHour, maxCustPerHour, avgCookiesPerCust)
     }
   };
   this.render = function() {
+    // console.log('render');
     this.calcTotalCookiesPerHour();
+    var cookieTable = document.getElementById('salmoncookietable');
+    var trEl = document.createElement('tr');
+    cookieTable.appendChild(trEl);
     for (var i = 0; i < hours.length; i++){
-      var trEl = document.createElement('tr');
 
       var tdEl = document.createElement('td');
-      console.log('storeLocations[i]', storeLocations[i]);
       tdEl.textContent = storeLocations[i];
       trEl.appendChild(tdEl);
     }
   };
   storeLocations.push(this);
+  // console.log(storeLocations);
 };
 
-for (var i = 0; i < storeLocations.length; i++) {
-  storeLocations[0].render();
-}
-// function cookieTableJS () {
-//   var cookieTable = document.getElementById('salmoncookietable');
-//   cookieTable.appendChild(trEl);
+// for (var i = 0; i < storeLocations.length; i++) {
+//   storeLocations[i].render();
 // }
-// cookieTableJS();
 //
 // for (var i = 0; i < storeLocations.length; i++) {
 //   var trEl = document.createElement('tr');
@@ -78,17 +76,26 @@ function makeHeaderRow(){
 }
 makeHeaderRow();
 
-var firstAndPikeStore = new Store('First and Pike', 23, 65, 6.3);
-var seatacAirportStore = new Store('SeaTac Airport', 3, 24, 1.2);
-var seattleCenterStore = new Store('Seattle Center', 11, 38, 3.7);
-var capitolHillStore = new Store('Capitol Hill', 20, 38, 2.3);
-var alkiStore = new Store('Alki', 2, 16, 4.6);
 
-firstAndPikeStore.render();
-seatacAirportStore.render();
-seattleCenterStore.render();
-capitolHillStore.render();
-alkiStore.render();
+new Store('First and Pike', 23, 65, 6.3);
+new Store('SeaTac Airport', 3, 24, 1.2);
+new Store('Seattle Center', 11, 38, 3.7);
+new Store('Capitol Hill', 20, 38, 2.3);
+new Store('Alki', 2, 16, 4.6);
+
+
+function cookieTableJS () {
+  // console.log('cookieTableJS');
+  var cookieTable = document.getElementById('salmoncookietable');
+  var trEl = document.createElement('tr');
+  for (var i = 0; i < storeLocations.length; i++) {
+    // console.log('HELLO: ', i);
+    storeLocations[i].render();
+  }
+  cookieTable.appendChild(trEl);
+}
+cookieTableJS();
+
 
 
 
