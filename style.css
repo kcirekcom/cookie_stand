@@ -5,3 +5,16 @@
 body {
   background: linear-gradient(to right, #fcfbe3, #ffa07a, #fcfbe3);
 }
+
+table, td {
+	border: 1px groove black;
+}
+
+td {
+	padding: 10px;
+}
+
+th {
+	background-color: gray;
+	color: white;
+}
