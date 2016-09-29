@@ -18,3 +18,8 @@ th {
 	background-color: gray;
 	color: white;
 }
+
+header {
+  font-family: 'Amaranth', sans-serif;
+  font-size: 60px;
+}
