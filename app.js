@@ -29,6 +29,7 @@ function Store(locationName, minCustPerHour, maxCustPerHour, avgCookiesPerCust) 
   allLocations.push(this);
 };
 
+//render function
 Store.prototype.render = function(){
 
   var trEl = document.createElement('tr');
@@ -49,6 +50,7 @@ Store.prototype.render = function(){
   trEl.appendChild(tdEl);
 };
 
+//functions
 function makeHeaderRow(){
   var trEl = document.createElement('tr');
 
