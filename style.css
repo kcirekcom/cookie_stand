@@ -8,6 +8,7 @@ body {
 
 table, td {
 	border: 1px groove black;
+  margin: auto;
 }
 
 td {
