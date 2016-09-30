@@ -2,11 +2,32 @@
 
 <head>
   <title>Salmon Cookie Stores</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"
+        href="https://fonts.googleapis.com/css?family=Amaranth">
 </head>
 
 <body>
   <table id="salmoncookietable"><table>
+
+  <form id="newstoresubmissionform">
+    <fieldset>
+      <legend>Add/Update Store</legend>
+
+      <label for="storelocation">Store Location:</label>
+      <input name="storelocation" type="text" />
+
+      <label for="minimumcustomers">Minimum customers per hour:</label>
+      <input name="minimumcustomers" type="text" size="10" />
+
+      <label for="maximumcustomers">Maximum customers per hour:</label>
+      <input name="maximumcustomers" type="text" size="10" />
+
+      <label for="averagecookiespercustomer">Average cookies per customer:</label>
+      <input name="averagecookiespercustomer" type="text" size="10" />
+
+      <button type="sumbit">Add/Update entry</button>
+    </fieldset>
+  </form>
 
   <script src="app.js"></script>
 </body>
