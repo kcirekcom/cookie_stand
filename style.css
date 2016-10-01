@@ -1,5 +1,5 @@
 * {
-  margin-left: 0 auto;
+  border: 1px dotted black;
 }
 
 body {
@@ -21,6 +21,26 @@ th {
 }
 
 header {
+  width: 700px;
+  margin: 0 auto;
   font-family: 'Amaranth', sans-serif;
   font-size: 60px;
 }
+
+h1 {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+p {
+  width: 525px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/*nav li {
+  border: 1px solid orange;
+  font-size: 15px;
+  float: right;
+}*/
